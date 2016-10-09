@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RefactoringExercise
 {
@@ -12,8 +8,8 @@ namespace RefactoringExercise
 		{
 			switch(package)
 			{
-				case Package.Standard: return new StandardStudent(emailAddress, universityId); break;
-				case Package.Premium: return new PremiumStudent(emailAddress, universityId); break;
+				case Package.Standard: return new StandardStudent(emailAddress, universityId);
+				case Package.Premium: return new PremiumStudent(emailAddress, universityId);
 				default: throw new NotImplementedException("There is no associated student for this package");
 			}
 		}

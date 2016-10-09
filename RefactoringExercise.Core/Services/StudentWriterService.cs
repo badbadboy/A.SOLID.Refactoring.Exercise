@@ -1,10 +1,6 @@
 ﻿using RefactoringExercise.Core.Exceptions;
 using RefactoringExercise.Core.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RefactoringExercise
 {
@@ -15,7 +11,11 @@ namespace RefactoringExercise
 		private readonly ILogger _logger;
 		private readonly IStudentFactory _studentFactory;
 
-		public StudentWriterService(IStudentRepository studentRepository, IUniversityRepository universityRepository, ILogger logger, IStudentFactory studentFactory)
+		public StudentWriterService(
+            IStudentRepository studentRepository, 
+            IUniversityRepository universityRepository, 
+            ILogger logger, 
+            IStudentFactory studentFactory)
 		{
 			_studentRepository = studentRepository;
 			_universityRepository = universityRepository;
@@ -34,7 +34,7 @@ namespace RefactoringExercise
 
 			var university = _universityRepository.GetById(universityId);
 			
-			var student = _studentFactory.Create(emailAddress, universityId, university.Package);			
+            var student = _studentFactory.Create(emailAddress, universityId, university.Package);			
 			
 			_studentRepository.Add(student);
 			

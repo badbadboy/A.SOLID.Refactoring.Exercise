@@ -1,14 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace RefactoringExercise
 {
 	public class University
 	{
-		public Guid Id { get; private set;}
-		public String Name { get; private set; }
-		public Package Package { get; private set;  }
+	    public University(Guid id, string name, Package package)
+	    {
+	        Id = id;
+	        Name = name;
+	        Package = package;
+	    }
+
+	    public Guid Id { get; }
+		public string Name { get; }
+		public Package Package { get; }
 	}
 }
